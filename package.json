@@ -1,0 +1,59 @@
+{
+  "name": "wait-for-online",
+  "version": "0.0.0",
+  "description": "Wait for a browser to be online",
+  "main": "dist/index.js",
+  "jsnext:main": "index.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "scripts": {
+    "test": "standard && ava",
+    "prepublish": "babel index.js --out-dir dist",
+    "postpublish": "rimraf dist && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrepolischuk/wait-for-online.git"
+  },
+  "keywords": [
+    "wait",
+    "navigator",
+    "online",
+    "offline"
+  ],
+  "author": "Andrey Polischuk <me@andrepolischuk.com> (https://andrepolischuk.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrepolischuk/wait-for-online/issues"
+  },
+  "homepage": "https://github.com/andrepolischuk/wait-for-online#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.24.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.0",
+    "browser-env": "^3.2.1",
+    "rimraf": "^2.5.2",
+    "standard": "^10.0.2"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-object-rest-spread"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "./.browser-env"
+    ]
+  }
+}
