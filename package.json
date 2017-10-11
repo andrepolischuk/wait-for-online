@@ -1,6 +1,6 @@
 {
   "name": "wait-for-online",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Wait for a browser to be online",
   "main": "dist/index.js",
   "jsnext:main": "index.js",
